@@ -535,6 +535,11 @@
             if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
                 return false;
             }
+
+            // disable control + shirt + c key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 67) {
+                return false;
+            }
     
             // disable U key
             if(e.ctrlKey && e.keyCode == 85) {
