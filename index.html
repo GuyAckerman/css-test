@@ -36,6 +36,7 @@
 
 </head>
 <body oncontextmenu="return false;">
+<!-- <body> -->
 
     <header>
         <div class="header desktop_header">
@@ -108,6 +109,9 @@
         </aside>
 
         <section class="hero" style="background-image: url('images/headerBg1.jpg');">
+            <a href="#home_form_wrapper">
+                <i class="fas fa-angle-down arrowDown"></i>
+            </a>
             <div class="hero_content_wrapper">
                 <div class="hero_content">
                     <h1 class="hero_h1"> כותרת הדר ראשית</h1>
@@ -123,18 +127,21 @@
             </div>
         </section>
 
-        <section class="home_form_wrapper">
+        <section id="home_form_wrapper" class="home_form_wrapper">
             <div class="home_form_row">
                 <div class="home_form_title"> כותרת טופס מניעה לפעולה </div>
                 <form class="home_form_div" method="post" action="/thank-you">
                     <div class="form_div">
-                        <input type="text" name="name" placeholder="שם מלא:" required>
+                        <input type="text" name="name" required>
+                        <span class="form_placeholder">שם מלא:</span>
                     </div>
                     <div class="form_div">
-                        <input type="tel" name="phone" placeholder="טלפון:" required>
+                        <input type="tel" name="phone" required>
+                        <span class="form_placeholder">טלפון:</span>
                     </div>
                     <div class="form_div">
-                        <input type="email" name="email" placeholder="מייל:" required>
+                        <input type="email" name="email" required>
+                        <span class="form_placeholder">מייל:</span>
                     </div>
                     <div class="form_div">
                         <button type="submit">
@@ -419,19 +426,23 @@
                 <div class="footer_title2"> כדאי לכם יש לנו עוגיות </div>
                 <div class="footer_contact_wrapper">
                     <form method="post" action="/thank-you">
-                        <div class="form_div">
-                            <input type="text" name="name" placeholder="שם מלא:" required>
+                        <div class="form_div form_vertical_div">
+                            <input type="text" name="name" required>
+                            <span class="form_placeholder">שם מלא:</span>
                         </div>
-                        <div class="form_div">
-                            <input type="tel" name="phone" placeholder="טלפון:" required>
+                        <div class="form_div form_vertical_div">
+                            <input type="tel" name="phone" required>
+                            <span class="form_placeholder">טלפון:</span>
                         </div>
-                        <div class="form_div">
-                            <input type="email" name="email" placeholder="מייל:" required>
+                        <div class="form_div form_vertical_div">
+                            <input type="email" name="email" required>
+                            <span class="form_placeholder">מייל:</span>
                         </div>
-                        <div class="form_div">
-                            <textarea type="message" name="name" placeholder="הודעה:" rows="3"></textarea>
+                        <div class="form_div form_vertical_div form_message_div">
+                            <textarea type="message" name="name" rows="3"></textarea>
+                            <span class="form_placeholder">הודעה:</span>
                         </div>
-                        <div class="form_div">
+                        <div class="form_div form_vertical_div">
                             <button class="btn btn1" type="submit">
                                 <span> שליחה </span>
                                 <i class="fa fa-angle-double-left" aria-hidden="true"></i>

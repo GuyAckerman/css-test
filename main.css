@@ -45,6 +45,7 @@
     --credit: 0.875rem;
     --font18: 1.125rem;
     --floatingIcons: 1.5rem;
+    --placeholderHover: 0.8rem;
 
     /* global font wights */
     --normal: 400;
@@ -90,6 +91,10 @@
 
 ::selection {
     background-color: var(--secondary-color);
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -146,6 +151,21 @@ a:hover{
     color: var(--lighterBlue);
 }
 
+
+.form_div{
+    position: relative;
+}
+.form_placeholder{
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+.form_message_div .form_placeholder{
+    transform: translateY(-150%);
+}
 form input{
     width: 100%;
     padding: var(--formInputPadding);
@@ -156,6 +176,28 @@ form input{
     line-height: var(--lineHeight);
     box-shadow: none!important;
 }
+form input:focus + .form_placeholder{
+    transform: translate(0, -230%);
+    color: var(--white);
+    font-size:  var(--placeholderHover);
+}
+form textarea:focus + .form_placeholder{
+    transform: translate(0, -320%);
+    color: var(--white);
+    font-size:  var(--placeholderHover);
+}
+
+form .form_vertical_div input:focus + .form_placeholder{
+    transform: translate(0, -110%);
+    font-size:  var(--placeholderHover);
+    color: var(--main-color);
+}
+form .form_vertical_div textarea:focus + .form_placeholder{
+    transform: translate(0, -210%);
+    font-size:  var(--placeholderHover);
+    color: var(--main-color);
+}
+
 input:focus,
 textarea:focus{
     outline-color: var(--secondary-color);
@@ -205,6 +247,15 @@ form button:hover{
         box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
     }
     
+}
+
+@keyframes UpAndDown{
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(1em);
+    }
 }
 /* GENERAL CSS END */
 /* #endregion */
@@ -409,6 +460,17 @@ header a{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.arrowDown{
+    position: absolute;
+    left: 50%;
+    bottom: 7%;
+    width: auto;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 2.3rem;
+    animation: UpAndDown 1s infinite alternate ease-in-out;
 }
 .hero_content_wrapper{
     width: 100%;
@@ -474,6 +536,7 @@ header a{
     align-items: center;
     width: 100%;
     max-width: 1000px;
+    padding-top: 1em;
 }
 .home_form_div .form_div{
     width: 100%;
